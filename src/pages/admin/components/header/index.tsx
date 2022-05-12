@@ -1,68 +1,31 @@
-import { Dropdown, Menu, Space } from 'antd'
-import { DownOutlined, SmileOutlined } from '@ant-design/icons'
+import { Switch } from 'antd'
 import { ConfigProvider } from 'antd'
 import './index.less'
 function Component() {
 
-  const changeTheme = (theme: string) => {
-    console.log(6666, window.less.modifyVars)
-    if (!window.less || !window.less.modifyVars) {
-      return
-    }
-
+  // 切换主题
+  const changeTheme = (checked: boolean) => {
     ConfigProvider.config({
       theme: {
-        primaryColor: '#25b864',
+        primaryColor: checked ? '#234988' : '#1890ff',
       },
     })
 
-    window.less.modifyVars({
-      '@header-bg-color': '#f0f'
-    }).then((res: any) => {
-      console.log(333, res)
-    }).catch((res: any) => {
-      console.log(4444, res)
-    })
+    if (checked) {
+      document.body.classList.add('dark')
+      document.body.classList.remove('bright')
+    } else {
+      document.body.classList.add('bright')
+      document.body.classList.remove('dark')
+    }
+  }
 
-    console.log(theme)
-  }
-  const menu = () => {
-    const items = [{
-      label: (
-        <a onClick={() => changeTheme('dark')}>
-          黑色主题
-        </a>
-      ),
-      children: null,
-      key: 'dark'
-    },
-    {
-      label: (
-        <a onClick={() => changeTheme('white')}>
-          白色主题
-        </a>
-      ),
-      children: null,
-      key: 'white'
-    },
-    ]
-    return <Menu
-      items={items}
-    />
-  }
 
   return (
     <div className="admin-header">
       <div className='left'>hahaha</div>
       <div className="right">
-        <Dropdown overlay={menu}>
-          <a onClick={e => e.preventDefault()}>
-            <Space>
-              主题
-              <DownOutlined />
-            </Space>
-          </a>
-        </Dropdown>
+        <Switch onChange={changeTheme} checkedChildren="暗黑主题" unCheckedChildren="明亮主题" />
       </div>
     </div>
   )

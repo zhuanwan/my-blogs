@@ -1,0 +1,11 @@
+/* 明亮主题 */
+.bright {
+  --header-bg-color: #fff;
+  --header-shadow-color: #f0f1f2;
+}
+
+/* 暗黑主题 */
+.dark {
+  --header-bg-color: #000;
+  --header-shadow-color: #f0f1f2;
+}

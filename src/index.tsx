@@ -5,6 +5,7 @@ import { ConfigProvider } from 'antd'
 import zhCN from 'antd/lib/locale/zh_CN'
 import { BrowserRouter } from "react-router-dom"
 import 'antd/dist/antd.variable.min.css'
+import '@/less/theme.css'
 import '@/less/index.less'
 
 const basename = REACT_APP_IS_BUILD ? "react-h5" : ""
