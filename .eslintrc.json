@@ -1,0 +1,18 @@
+// .eslintrc.json
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": ["plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "strict": "error",
+    "semi": ["error", "never"],
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/no-explicit-any": "off", // 是否可以用any
+    "@typescript-eslint/no-empty-function": "off", // function是否可以为空
+    "@typescript-eslint/no-this-alias": "off" // 是否可以用this别名
+  }
+  // "ignorePatterns": ["index.d.ts"]
+}
