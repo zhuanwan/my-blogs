@@ -1,1 +1,16 @@
 @import "./reset.less";
+
+html {
+  /* 移动端使用 */
+  font-size: 16vw;
+
+  /* 小于320的使用 */
+  @media screen and (max-width: 320px) {
+    font-size: 64px;
+  }
+
+  /* ipad:768/1024 pc:>1100 */
+  @media screen and (min-width: 750px) {
+    font-size: 75px;
+  }
+}

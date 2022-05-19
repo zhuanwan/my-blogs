@@ -9,6 +9,7 @@ import '@/less/theme.css'
 import '@/less/index.less'
 
 const basename = REACT_APP_IS_BUILD ? "react-h5" : ""
+// document.documentElement.style.fontSize = '12px'
 
 createRoot(document.getElementById("root") as Element).render(
   <ConfigProvider locale={zhCN}>
@@ -17,7 +18,7 @@ createRoot(document.getElementById("root") as Element).render(
         <App />
       </BrowserRouter>
     </React.StrictMode>
-  </ConfigProvider>
+  </ConfigProvider>,
 )
 
 if (module.hot) {

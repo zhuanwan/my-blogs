@@ -1,18 +1,60 @@
 // .eslintrc.json
+// "off"或0 -关闭规则
+// "warn" 或1 - 开启规则, 使用警告 程序不会退出
+// "error"或2 - 开启规则, 使用错误 程序退出
+
+// always（默认）：在语句末尾需要分号
+// never：不允许加分号
+
+// eslint-plugin-prettier：这是一个ESLint插件，该插件实现了一系列额外的ESLint规则。这些规则使用Prettier来检查代码格式，如果格式与Prettier期望的不同，会抛出对应的ESLint错误。同时这些错误在eslint --fix时会交由Prettier进行修复。
+// eslint-config-prettier：这是一个ESLint配置，该配置将可能与Prettier冲突的规则关闭，从而使得你能将Prettier于其他的ESLint配置（如eslint-config-airbnb）一起使用。
+
 {
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "parserOptions": {
-    "project": "./tsconfig.json"
+  "env": {
+    "browser": true,
+    "amd": true,
+    "node": true,
+    "es6": true
   },
-  "extends": ["plugin:@typescript-eslint/recommended"],
-  "rules": {
-    "strict": "error",
-    "semi": ["error", "never"],
-    "@typescript-eslint/no-inferrable-types": "off",
-    "@typescript-eslint/no-explicit-any": "off", // 是否可以用any
-    "@typescript-eslint/no-empty-function": "off", // function是否可以为空
-    "@typescript-eslint/no-this-alias": "off" // 是否可以用this别名
-  }
-  // "ignorePatterns": ["index.d.ts"]
+  "root": true,
+  "extends": ["eslint:recommended"],
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "env": { "browser": true, "es6": true, "node": true },
+      "extends": [
+        "plugin:react/recommended", // 使用react的推荐规则(eslint-plugin-react)
+        "plugin:@typescript-eslint/eslint-recommended", // 使用推荐的规则，来自@typescript-eslint/eslint-plugin
+        "plugin:prettier/recommended" // 使用eslint-plugin-prettier推荐的配置，注意需要在最后一个
+      ],
+      "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+      },
+      "parser": "@typescript-eslint/parser", // 指定parser
+      "parserOptions": {
+        "ecmaFeatures": { "jsx": true }, // 支持解析JSX
+        "ecmaVersion": 2020, // 让parser按更新的语法来解析
+        "sourceType": "module", // 让parser按ESM解析
+        "project": "./tsconfig.json"
+      },
+      "plugins": ["@typescript-eslint"], // 启用插件
+      "settings": {
+        "react": {
+          "version": "detect" // 让eslint-plugin-react自动检测react版本
+        }
+      },
+      // 此处书写需要覆盖的配置
+      "rules": {
+        "indent": ["error", 2, { "SwitchCase": 1 }],
+        "semi": ["error", "never"],
+        "comma-dangle": ["error", "always-multiline"],
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/no-explicit-any": "off", // 是否可以用any
+        "@typescript-eslint/no-empty-function": "off", // function是否可以为空
+        "@typescript-eslint/no-this-alias": "off", // 是否可以用this别名
+        "react/react-in-jsx-scope": "off" // function 不引入react报错
+      }
+    }
+  ]
 }

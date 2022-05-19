@@ -3,7 +3,7 @@ import { Link, Outlet } from 'react-router-dom'
 function Component() {
   return (
     <div>
-      <nav>
+      {/* <nav>
         <ul>
           <li>
             <Link to="/">首页</Link>
@@ -18,7 +18,7 @@ function Component() {
             <Link to="/test3">test3</Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
 
       <hr />
       <Outlet />
