@@ -95,14 +95,14 @@ function Component() {
           <ul className={styles.menu}>
             {menu.map((item) => (
               <li
-                key={item.link}
+                key={item.link
+                }
                 className={classnames(styles["menu-item"], {
                   active: item.link === current,
                 })}
               >
                 <span>{item.name}</span>
-              </li
-              >
+              </li>
             ))}
           </ul>
         </div>
