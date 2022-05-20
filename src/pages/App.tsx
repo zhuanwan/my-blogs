@@ -1,10 +1,10 @@
-import { useRoutes } from 'react-router-dom'
-import routes from '../router/index'
+import { useRoutes } from "react-router-dom"
+import routes from "../router/index"
 
 function App() {
-  const element = useRoutes(routes)
+    const element = useRoutes(routes)
 
-  return <>{element}</>
+    return <>{element}</>
 }
 
 export default App

@@ -12,6 +12,21 @@
     "lint": "eslint src --ext .tsx,.ts,.js,.jsx,.d.ts",
     "style": "stylelint --fix \"src/**/*.(less|css)\" --custom-syntax postcss-less"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{tsx,ts,d.ts,js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "src/**/*.{less,css,html}": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhuanwan/my-blogs.git"
