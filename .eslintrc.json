@@ -38,7 +38,7 @@
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "semi": ["error", "never"],
     // 尾逗号
-    "trailing-comma": [true, {
+    "trailing-comma": [0, {
       "singleline": "never",
       "multiline": {
         "objects": "always",
