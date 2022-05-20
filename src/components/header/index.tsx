@@ -101,7 +101,8 @@ function Component() {
                 })}
               >
                 <span>{item.name}</span>
-              </li>
+              </li
+              >
             ))}
           </ul>
         </div>
