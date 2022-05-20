@@ -102,7 +102,8 @@ function Component() {
                 })
               }
               >
-                <span>{item.name}</span>
+                <span>{item.name}</span
+                >
               </li
               >
             ))}
