@@ -99,7 +99,8 @@ function Component() {
                 }
                 className={classnames(styles["menu-item"], {
                   active: item.link === current,
-                })}
+                })
+              }
               >
                 <span>{item.name}</span>
               </li>
