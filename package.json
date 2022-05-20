@@ -4,6 +4,7 @@
   "description": "博客",
   "main": "src/index.tsx",
   "scripts": {
+    "prepare": "npx husky install",
     "start": "cross-env REACT_APP_RUNENV=dev REACT_APP_IS_BUILD=false webpack-dev-server --config build/webpack.dev.js",
     "start:test": "cross-env REACT_APP_RUNENV=test REACT_APP_IS_BUILD=false webpack-dev-server --config build/webpack.dev.js",
     "start:prod": "cross-env REACT_APP_RUNENV=prod REACT_APP_IS_BUILD=false webpack-dev-server --config build/webpack.dev.js",
