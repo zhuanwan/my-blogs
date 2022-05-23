@@ -14,11 +14,6 @@
     "style": "stylelint --fix \"src/**/*.(less|css)\" --custom-syntax postcss-less",
     "lint-staged": "lint-staged"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint-staged"
-    }
-  },
   "lint-staged": {
     "src/**/*.{tsx,ts,d.ts,js,jsx}": [
       "prettier --write",
