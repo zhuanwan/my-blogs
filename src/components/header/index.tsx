@@ -105,10 +105,8 @@ function Component() {
               </li>
             ))}
           </ul>
-        </div
-        >
-        <div className={styles.right}>登录</div
-        >
+        </div>
+        <div className={styles.right}>登录</div>
       </div>
     </div>
   )
