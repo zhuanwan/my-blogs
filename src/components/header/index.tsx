@@ -87,6 +87,7 @@ function Component() {
   //   console.log("click ", e)
   //   setCurrent(e.key)
   // }
+  // test
 
   return (
     <div className={styles.header}>
@@ -104,7 +105,8 @@ function Component() {
               </li>
             ))}
           </ul>
-        </div>
+        </div
+        >
         <div className={styles.right}>登录</div>
       </div>
     </div>
