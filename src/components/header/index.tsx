@@ -107,7 +107,8 @@ function Component() {
           </ul>
         </div
         >
-        <div className={styles.right}>登录</div>
+        <div className={styles.right}>登录</div
+        >
       </div>
     </div>
   )
