@@ -18,7 +18,7 @@
   },
   "lint-staged": {
     "**/*.{less,css}": "lint-staged:css",
-    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
+    "**/*.{js,jsx,ts,tsx}": "yarn lint-staged:js",
     "**/*.{js,jsx,tsx,ts,md,json}": [
       "prettier --write"
     ]
