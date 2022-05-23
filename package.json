@@ -21,12 +21,11 @@
   },
   "lint-staged": {
     "src/**/*.{tsx,ts,d.ts,js,jsx}": [
-      "eslint --fix",
-      "git add"
+      "prettier --write",
+      "eslint --fix"
     ],
     "src/**/*.{less,css,html}": [
-      "stylelint --fix",
-      "git add"
+      "stylelint --fix"
     ]
   },
   "repository": {
