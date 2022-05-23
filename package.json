@@ -17,12 +17,10 @@
     "style": "stylelint --fix \"src/**/*.(less|css)\" --custom-syntax postcss-less"
   },
   "lint-staged": {
+    "**/*.{less,css}": "lint-staged:css",
     "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
     "**/*.{js,jsx,tsx,ts,md,json}": [
       "prettier --write"
-    ],
-    "**/*.{less,css}": [
-      "lint-staged:css"
     ]
   },
   "repository": {
