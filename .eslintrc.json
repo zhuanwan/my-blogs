@@ -45,6 +45,7 @@
       },
       // 此处书写需要覆盖的配置
       "rules": {
+        "prettier/prettier": ["error", { "singleQuote": true, "parser": "typescript", "endOfLine": "auto" }],
         "indent": ["error", 2, { "SwitchCase": 1 }],
         "semi": ["error", "never"],
         // 尾逗号

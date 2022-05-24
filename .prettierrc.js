@@ -8,7 +8,7 @@ module.exports = {
   // // 4.结尾是否添加分号，false的情况下只会在一些导致ASI错误的其工况下在开头加分号，我选择无分号结尾的风格(semi: <bool>)
   semi: false,
   // // 5.使用单引号(singleQuote: <bool>)
-  singleQuote: false,
+  singleQuote: true,
   // // 6.object对象中key值是否加引号（quoteProps: "<as-needed|consistent|preserve>"）as-needed只有在需求要的情况下加引号，consistent是有一个需要引号就统一加，preserve是保留用户输入的引号
   // quoteProps: 'as-needed',
   // // 7.在jsx文件中的引号需要单独设置（jsxSingleQuote: <bool>）
@@ -27,7 +27,7 @@ module.exports = {
   // // 18. vue script和style标签中是否缩进,开启可能会破坏编辑器的代码折叠
   // vueIndentScriptAndStyle: false,
   // // 19.    endOfLine: "<lf|crlf|cr|auto>" 行尾换行符,默认是lf,
-  endOfLine: "auto",
+  endOfLine: 'auto',
   // // 20.embeddedLanguageFormatting: "off",默认是auto,控制被引号包裹的代码是否进行格式化
   // embeddedLanguageFormatting: 'off',
 }
