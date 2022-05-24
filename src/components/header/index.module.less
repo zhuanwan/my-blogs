@@ -1,22 +1,102 @@
-.header {
+.header-box {
+  position: relative;
   height: 60px;
-  background-color: #fff;
 
-  .container {
+  &-wrapper {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: inherit;
+    background-color: var(--header-bg-color);
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 5%);
+  }
+
+  &-inner {
     display: flex;
-    width: 1200px;
-    height: 100%;
+    width: 100%;
+    height: inherit;
+    max-width: 1200px;
+    min-width: 1000px;
     margin: 0 auto;
-    font-size: 16px;
+    box-sizing: border-box;
     align-items: center;
 
-    .left {
-      font-size: 14px;
-      color: var(--font-2);
+    .nav {
+      display: flex;
+      height: 100%;
+      margin-right: 24px;
+      flex-shrink: 0;
+      align-items: center;
+
+      .nav-item {
+        padding: 0 20px;
+        font-size: 16px;
+        font-weight: 500;
+        text-align: center;
+
+        .nav-item-link {
+          color: var(--header-font-1);
+          cursor: pointer;
+
+          &:hover {
+            color: var(--header-font-2);
+          }
+        }
+
+        &.active {
+          .nav-item-link {
+            color: var(--ant-primary-color);
+
+            &:hover {
+              color: var(--ant-primary-color);
+            }
+          }
+        }
+      }
     }
 
-    .right {
-      font-size: 16px;
+    .search-box {
+      flex: 1;
+      margin-right: 20px;
+
+      .search-input {
+        max-width: 300px;
+      }
+    }
+
+    .theme-box {
+      margin-right: 20px;
+    }
+
+    .user-box {
+      display: flex;
+
+      .logined {
+        color: var(--header-font-1);
+        cursor: pointer;
+
+        &:hover {
+          color: var(--header-font-2);
+        }
+
+        .avatar {
+          width: 32px;
+          height: 32px;
+          margin-right: 10px;
+          border-radius: 100%;
+        }
+
+        .arrow {
+          margin-top: 8px;
+          font-size: 14px;
+        }
+      }
+
+      .login-btn {
+        font-size: 16px;
+        color: var(--ant-primary-color);
+        cursor: pointer;
+      }
     }
   }
 }

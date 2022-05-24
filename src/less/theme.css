@@ -2,6 +2,8 @@
 .bright {
   --header-bg-color: #fff;
   --header-shadow-color: #f0f1f2;
+  --header-font-1: #666;
+  --header-font-2: #252933;
   --font-1: #252933;
   --font-2: #515767;
   --font-3: #8a919f;
@@ -12,6 +14,8 @@
 .dark {
   --header-bg-color: #000;
   --header-shadow-color: #f0f1f2;
+  --header-font-1: #f1f1f1;
+  --header-font-2: #fff;
   --font-1: #252933;
   --font-2: #515767;
   --font-3: #8a919f;
