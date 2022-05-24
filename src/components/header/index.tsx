@@ -8,7 +8,7 @@ import { CaretRightOutlined } from '@ant-design/icons'
 
 const menu = [
   {
-    name: '首页',
+    name: '首页m',
     link: '/',
   },
   {
