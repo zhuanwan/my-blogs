@@ -1,17 +1,15 @@
-'use strict'
-const webpack = require('webpack')
-const { merge } = require('webpack-merge');
-const baseConfig = require('./webpack.base')
+"use strict"
+const { merge } = require("webpack-merge")
+const baseConfig = require("./webpack.base")
+const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin")
 
 const config = {
-  target: 'web',
-  mode: 'development',
+  target: "web",
+  mode: "development",
   output: {
-    publicPath: '/',
+    publicPath: "/",
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ],
+  plugins: [new ReactRefreshPlugin()],
   devServer: {
     compress: true,
     port: 9000,
@@ -22,12 +20,12 @@ const config = {
         errors: true,
         warnings: false,
       },
-      logging: 'none',
+      logging: "none",
     },
     historyApiFallback: true,
   },
-  stats: 'errors-only',
-  devtool: 'cheap-source-map',
+  stats: "errors-only",
+  devtool: "cheap-source-map",
 }
 
 module.exports = merge(config, baseConfig)

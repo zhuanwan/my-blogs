@@ -19,7 +19,3 @@ createRoot(document.getElementById("root") as Element).render(
     </React.StrictMode>
   </ConfigProvider>
 )
-
-if (module.hot) {
-  module.hot.accept()
-}

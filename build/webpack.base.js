@@ -1,12 +1,12 @@
-"use strict";
-const path = require("path");
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // 提取css
-const WebpackBar = require("webpackbar");
+"use strict"
+const path = require("path")
+const webpack = require("webpack")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin") // 提取css
+const WebpackBar = require("webpackbar")
 
 // 是本地开发还是打包
-const isBuild = process.env.REACT_APP_IS_BUILD === "true";
+const isBuild = process.env.REACT_APP_IS_BUILD === "true"
 
 // less loader
 const lessUseLoaders = (isModule) => [
@@ -32,25 +32,16 @@ const lessUseLoaders = (isModule) => [
       },
     },
   },
-];
+]
 
 module.exports = {
   entry: { app: "./src/index.tsx" },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: [
-          // tsc编译后，再用babel处理
-          { loader: "babel-loader?compact=false" },
-          {
-            loader: "ts-loader",
-          },
-        ],
-      },
-      {
-        test: /\.js$/,
-        use: ["babel-loader?compact=false"],
+        test: /\.(tsx|ts|js|jsx)$/,
+        use: "babel-loader",
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
@@ -101,8 +92,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       REACT_APP_ENV: JSON.stringify(process.env.REACT_APP_RUNENV),
-      REACT_APP_IS_BUILD:
-        JSON.stringify(process.env.REACT_APP_IS_BUILD) === "true",
+      REACT_APP_IS_BUILD: JSON.stringify(process.env.REACT_APP_IS_BUILD) === "true",
     }),
     new WebpackBar({
       color: "#85d", // 默认green，进度条颜色支持HEX
@@ -110,4 +100,4 @@ module.exports = {
       profile: false, // 默认false，启用探查器。
     }),
   ],
-};
+}
