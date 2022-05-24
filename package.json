@@ -11,14 +11,12 @@
     "build:test": "cross-env REACT_APP_RUNENV=test REACT_APP_IS_BUILD=true webpack --progress --config build/webpack.prod.js",
     "build:prod": "cross-env REACT_APP_RUNENV=prod REACT_APP_IS_BUILD=true webpack --progress --config build/webpack.prod.js",
     "lint-staged": "lint-staged",
-    "lint-staged:js": "eslint",
-    "lint-staged:css": "stylelint",
     "lint": "eslint src --ext .tsx,.ts,.js,.jsx,.d.ts",
     "style": "stylelint --fix \"src/**/*.(less|css)\" --custom-syntax postcss-less"
   },
   "lint-staged": {
-    "**/*.{less,css}": "lint-staged:css",
-    "**/*.{js,jsx,ts,tsx}": "yarn lint-staged:js",
+    "**/*.{less,css}": "stylelint",
+    "**/*.{js,jsx,ts,tsx}": "eslint",
     "**/*.{js,jsx,tsx,ts,md,json}": [
       "prettier --write"
     ]
