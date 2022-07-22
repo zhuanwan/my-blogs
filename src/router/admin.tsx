@@ -7,15 +7,11 @@ const Admin = loadable(() => import('../pages/admin'), {
   fallback: <h1>Loading Admin</h1>,
 })
 
-
-
-
 const routes: RouteObject[] = [
   {
     path: '/admin',
     element: <Admin />,
   },
-
 ]
 
 export default routes

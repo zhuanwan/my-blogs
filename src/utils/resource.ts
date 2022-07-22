@@ -1,8 +1,3 @@
-/**
- * @Author: huweijian
- * @Date: 2019-11-11 16:45:13
- * @Desc: 处理资源方法
- */
 const reader = new FileReader()
 const image = new Image()
 image.setAttribute('crossOrigin', '')
@@ -12,7 +7,7 @@ image.setAttribute('crossOrigin', '')
  * @param file
  * @returns {Promise<*>}
  */
-export async function readFile(file, returnType = 'dataurl') {
+export async function readFile(file: File, returnType = 'dataurl') {
   if (returnType === 'dataurl') {
     reader.readAsDataURL(file)
   }
@@ -34,7 +29,7 @@ export async function readFile(file, returnType = 'dataurl') {
  * @param img {string} 图片地址url
  * @returns {Promise<any>}
  */
-export function loadImg(img) {
+export function loadImg(img: string) {
   image.src = img
   return new Promise((resolve, reject) => {
     image.onload = () => {
@@ -52,7 +47,7 @@ export function loadImg(img) {
  * @param filename {string} 文件名
  * @returns {File}
  */
-export function dataURLtoFile(data, filename = 'file') {
+export function dataURLtoFile(data: string, filename = 'file') {
   const arr = data.split(',')
   const mime = arr[0].match(/:(.*?);/)[1]
   const suffix = mime.split('/')[1]
@@ -63,6 +58,6 @@ export function dataURLtoFile(data, filename = 'file') {
     u8arr[n] = bstr.charCodeAt(n)
   }
   return new File([u8arr], `${filename}.${suffix}`, {
-    type: mime
+    type: mime,
   })
 }

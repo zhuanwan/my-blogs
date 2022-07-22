@@ -1,5 +1,5 @@
 import { Button } from 'antd'
-import { Link, Outlet } from 'react-router-dom'
+// import { Link, Outlet } from 'react-router-dom'
 import Header from './components/header'
 function Component() {
   return (
@@ -7,10 +7,8 @@ function Component() {
       <Header />
       <hr />
       ssss
-      <div style={{ height: 30, backgroundColor: '#0f0' }}>
-        sdfasdsdfsadfa
-      </div>
-      <Button type='primary'>HAHA</Button>
+      <div style={{ height: 30, backgroundColor: '#0f0' }}>sdfasdsdfsadfa</div>
+      <Button type="primary">HAHA</Button>
       {/* <Outlet /> */}
     </div>
   )
