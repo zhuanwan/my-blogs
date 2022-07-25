@@ -1,13 +1,14 @@
-"use strict"
-const { merge } = require("webpack-merge")
-const baseConfig = require("./webpack.base")
-const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin")
+'use strict'
+const { merge } = require('webpack-merge')
+const baseConfig = require('./webpack.base')
+const ReactRefreshPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const mock = require('../src/mock')
 
 const config = {
-  target: "web",
-  mode: "development",
+  target: 'web',
+  mode: 'development',
   output: {
-    publicPath: "/",
+    publicPath: '/',
   },
   plugins: [new ReactRefreshPlugin()],
   devServer: {
@@ -20,12 +21,17 @@ const config = {
         errors: true,
         warnings: false,
       },
-      logging: "none",
+      logging: 'none',
     },
     historyApiFallback: true,
+    setupMiddlewares(middlewares, devServer) {
+      // 测试http://localhost:9000/api/example/points-list
+      mock(devServer.app)
+      return middlewares
+    },
   },
-  stats: "errors-only",
-  devtool: "cheap-source-map",
+  stats: 'errors-only',
+  devtool: 'cheap-source-map',
 }
 
 module.exports = merge(config, baseConfig)

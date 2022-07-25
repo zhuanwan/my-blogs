@@ -2,11 +2,7 @@ import axios from 'axios'
 import { clearStorage, getStorage } from '@/utils/storage'
 import storageKey from '@/utils/storageKey'
 
-/**
- * 自定义实例默认值
- */
-
-const instance = axios.create({ timeout: 10000, baseURL: '/bromake_celcd-cmp-ie' }) // 请求超时
+const instance = axios.create({ timeout: 10000, baseURL: '/' }) // 请求超时
 
 const getToken = (() => {
   return () => getStorage(storageKey.TOKEN)
