@@ -1,3 +1,10 @@
+## 运行
+
+```js
+yarn
+yarn start  // http://localhost:9000/
+```
+
 ## vscode 中代码自动修复、格式化
 
 ### 1、安装扩展
